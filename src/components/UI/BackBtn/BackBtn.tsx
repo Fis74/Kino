@@ -25,7 +25,11 @@ export const BackBtn = memo<BackBtnProps>(
         startIcon={variant === "icon" ? null : <FiChevronLeft />}
         {...props}
       >
-        {variant === "icon" ? <FiChevronLeft /> : "Назад"}
+        {variant === "icon" ? (
+          <FiChevronLeft className={classNames(className)} />
+        ) : (
+          "Назад"
+        )}
       </ButtonBase>
     );
   }
