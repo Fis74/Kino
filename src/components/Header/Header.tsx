@@ -16,8 +16,10 @@ import { useAuth } from "@/hooks/useAuth";
 // eslint-disable-next-line react/display-name
 const Header = () => {
   const { user } = useAuth();
+  const router = useRouter();
   const logout = async () => {
     await signOut(auth);
+    router.push(RoutesEnum.Home);
   };
 
   const ref = useRef(null);

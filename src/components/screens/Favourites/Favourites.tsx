@@ -10,7 +10,7 @@ import { RoutesEnum } from "src/constans/routes";
 import { auth } from "../../../firebase/clientApp";
 
 export const Favourites = () => {
-  const router = useRouter();
+  const { push } = useRouter();
   const [user, loading] = useAuthState(auth);
 
   const { searchs } = useTypedSelector((state) => state.searchReducer);
@@ -24,9 +24,7 @@ export const Favourites = () => {
   });
 
   const { Container, Heading, Description, Body, Content, Subtitle } = Catalog;
-  if (!user) {
-    router.push(RoutesEnum.Login);
-  }
+
   return (
     <Catalog>
       <Container>
