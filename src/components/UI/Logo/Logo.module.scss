@@ -1,0 +1,12 @@
+.logo {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: 59px;
+  height: 24px;
+  flex-shrink: 0;
+  @media (max-width: 768px) {
+    width: 49px;
+    height: 18px;
+  }
+}
